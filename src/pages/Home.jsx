@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CoinCard from '../components/CoinCard.jsx';
 const API_KEY = import.meta.env.VITE_API_KEY;
+
 
 
 function Home() {   
