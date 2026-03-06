@@ -8,17 +8,20 @@ function Coin() {
     useEffect(() => {
         fetch(`https://rest.coincap.io/v3/assets/${id}?apiKey=${import.meta.env.VITE_API_KEY}`)
             .then((response) => response.json())
-            .then((data) => setCoin(data));
+            .then((data) => setCoin(data.data));
     }   , [id]);
     if (!coin) {
         return (
-        <div>Loading...
+            <p>Loading... </p>)}
+            return (
+        <div>
         <p>{coin.name}</p>
         <p>Rank: {coin.rank}</p>
         <p>Symbol: {coin.symbol}</p>
+        <p>Price (USD): ${parseFloat(coin.priceUsd).toFixed(2)}</p>
         </div>
         );
 
     }
-}
+
 export default Coin;

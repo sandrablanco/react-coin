@@ -15,7 +15,7 @@ function Home() {
         <>
         <div>
             <h1>Criptomonedas</h1>
-             {/*metemos ternario si array vacio mostrar cargando sino devuelveme lo otro*/}
+             {/*metemos ternario si array vacio mostrar cargando sino devuelveme la info*/}
               {coins.length === 0 ? (
         <p>Cargando...</p>
       ) : (
