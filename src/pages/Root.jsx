@@ -5,7 +5,7 @@ function Root() {
         <>
         <div>
             <Link to="/">Home</Link>
-            <Link to="/favorites">Favorites</Link>
+            <Link to="/Favorites">Favorites</Link>
             <Outlet /> {/*activa las rutas hijas*/}
         </div>
         </>

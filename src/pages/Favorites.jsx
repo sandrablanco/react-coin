@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 import {useState, useEffect} from 'react';
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 function Favorites() {
     const [favorites, setFavorites] = useState([]);
@@ -15,7 +16,7 @@ function Favorites() {
         const fetchFavoriteCoins = async () => {
             const coinsData = await Promise.all(
                 favorites.map(async (id) => {
-                    const res = await fetch(`https://rest.coincap.io/v3/assets/${id}?apiKey=${import.meta.env.VITE_API_KEY}`);
+                    const res = await fetch(`https://rest.coincap.io/v3/assets/${id}?apiKey=${API_KEY}`);
                     const data = await res.json();
                     return data.data;
                 })
